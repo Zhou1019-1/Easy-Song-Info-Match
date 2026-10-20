@@ -1,0 +1,20 @@
+# 依赖
+node_modules/
+
+# 构建产物
+out/
+release/
+dist/
+*.tsbuildinfo
+
+# 测试样本（由 tests/fixtures/generate.mjs 确定性生成，npm test 前自动重建）
+tests/fixtures/samples/
+
+# 工具目录
+.trae/
+
+# 日志与临时文件
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db

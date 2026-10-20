@@ -1,0 +1,41 @@
+{
+  "name": "songmatch",
+  "version": "1.0.0",
+  "description": "多来源歌曲信息自选匹配 + 标签管理 + 歌词补齐 的桌面工具",
+  "author": "Zhou1019-1",
+  "license": "MIT",
+  "main": "./out/main/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "postinstall": "electron-builder install-app-deps",
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.web.json && tsc --noEmit -p tsconfig.node.json",
+    "pretest": "node tests/fixtures/generate.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "dist": "electron-vite build && electron-builder --win --x64",
+    "smoke": "vitest run tests/scenarios.test.ts"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "iconv-lite": "^0.7.3",
+    "node-taglib-sharp": "^6.0.3"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^22.10.2",
+    "@vitejs/plugin-vue": "^6.0.10",
+    "electron": "^44.9.1",
+    "electron-builder": "^26.15.3",
+    "electron-vite": "^6.0.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.7",
+    "vitest": "^3.2.7",
+    "vue": "^3.5.44",
+    "vue-tsc": "^3.3.13"
+  }
+}

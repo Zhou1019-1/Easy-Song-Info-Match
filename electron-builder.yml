@@ -1,0 +1,35 @@
+appId: com.zhou1019.songmatch
+productName: SongMatch
+copyright: Copyright © 2026 Zhou1019-1
+directories:
+  buildResources: build
+  output: release
+
+files:
+  - out/**/*
+  - package.json
+  - '!**/*.map'
+
+# 原生模块（better-sqlite3 的 .node）需要解包，否则 asar 下无法加载
+asarUnpack:
+  - '**/*.node'
+
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  icon: build/icon.png
+  artifactName: ${productName}-${version}-setup.${ext}
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: SongMatch
+  deleteAppDataOnUninstall: false
+
+electronDownload:
+  mirror: https://npmmirror.com/mirrors/electron/
